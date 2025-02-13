@@ -1,0 +1,21 @@
+{% extends 'recipebook.html' %}
+
+{% block content %}
+    <h2>
+        {{ recipes.0.name }}
+    </h2>
+
+    <ul>
+        {% for ingredient in recipes.0.ingredients %}
+            <li>
+                {{ ingredient.name }}, {{ ingredient.quantity }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p>
+        <a href="/recipes/list">
+            Back to Recipes List!
+        </a>
+    </p>
+{% endblock %}
