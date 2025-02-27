@@ -2,13 +2,13 @@
 
 {% block content %}
     <h2>
-        {{ recipes.1.name }}
+        {{ object.name }}
     </h2>
 
     <ul>
-        {% for ingredient in recipes.1.ingredients %}
+        {% for ingredient in object.ingredients.all %}
             <li>
-                {{ ingredient.name }}, {{ ingredient.quantity }}
+                {{ ingredient.ingredient.name }}
             </li>
         {% endfor %}
     </ul>
