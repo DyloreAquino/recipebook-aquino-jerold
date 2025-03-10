@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-
+from accounts.models import Profile
 
 class Ingredient(models.Model):
     """A model for ingredients, storing their name."""
@@ -20,7 +20,7 @@ class Recipe(models.Model):
     """A model for recipes, storing their name."""
 
     name = models.CharField(max_length=100)
-    author = models.CharField(max_length=100)
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
