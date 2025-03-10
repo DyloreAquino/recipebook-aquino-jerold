@@ -20,6 +20,9 @@ class Recipe(models.Model):
     """A model for recipes, storing their name."""
 
     name = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         """Return a string representation of the Recipe."""
