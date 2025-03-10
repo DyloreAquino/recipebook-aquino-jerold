@@ -14,6 +14,9 @@
                     Recipe Book
                 </h1>
             </header>
+            <h1>
+                {{ request.resolver_match.view_name }}
+            </h1>
  
             {% if request.user.is_authenticated %}
                 <form method="POST" action="{% url 'logout' %}">
@@ -29,7 +32,7 @@
                 </a>
             {% endif %}
 
-            <br><hr>
+            <hr>
 
         {% endblock %}
     </head>
