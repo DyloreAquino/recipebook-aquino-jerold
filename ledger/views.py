@@ -1,7 +1,9 @@
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Recipe
+from .forms import RecipeForm
 
 
 class RecipeListView(ListView):
@@ -17,3 +19,10 @@ class RecipeDetailView(LoginRequiredMixin, DetailView):
     model = Recipe
     template_name = 'ledger/recipe_detail.html'
     redirect_field_name = '/recipes/list'
+
+class TaskCreateView(LoginRequiredMixin, CreateView):
+
+    model = Recipe
+    template_name = 'sampleapp/recipe_add.html'
+
+    form_class = RecipeForm
