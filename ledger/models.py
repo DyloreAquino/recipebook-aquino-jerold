@@ -36,7 +36,7 @@ class Recipe(models.Model):
 class RecipeImage(models.Model):
     """A model for the image of a recipe."""
 
-    image = models.ImageField(null=True, blank=False, upload_to='images/')
+    image = models.ImageField(blank=False, upload_to='images/')
     description = models.TextField(max_length=255)
     recipe = models.ForeignKey(
         Recipe, 
