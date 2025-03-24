@@ -18,6 +18,14 @@
     </ul>
 
     <p>
+       Recipe Image: 
+    </p>
+
+    {% if object.task_image %}
+        <img src="{{ object.recipe_image.url }}" alt="{{ object.recipe_image.description }}">
+    {% endif %}
+
+    <p>
         <a href="/recipes/list">
             Back to Recipes List!
         </a>

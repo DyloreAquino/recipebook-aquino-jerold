@@ -32,6 +32,7 @@ class Recipe(models.Model):
         """Return the URL associated with the Recipe."""
         return reverse('ledger:recipe_detail', args=[str(self.pk)])
 
+
 class RecipeImage(models.Model):
     """A model for the image of a recipe."""
 
