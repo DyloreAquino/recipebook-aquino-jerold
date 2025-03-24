@@ -28,3 +28,4 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
     template_name = 'ledger/recipe_add.html'
 
     form_class = RecipeForm
+    
