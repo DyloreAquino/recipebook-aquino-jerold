@@ -2,5 +2,12 @@
 {% load static %}
 
 {% block content %}
-    
+    <h3>Create a new recipe here:</h3>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">
+            Submit
+        </button>
+    </form>
 {% endblock %}
