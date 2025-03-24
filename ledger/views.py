@@ -20,10 +20,11 @@ class RecipeDetailView(LoginRequiredMixin, DetailView):
     template_name = 'ledger/recipe_detail.html'
     redirect_field_name = '/recipes/list'
 
+
 class RecipeCreateView(LoginRequiredMixin, CreateView):
     """A CreateView for creating Recipes."""
 
     model = Recipe
-    template_name = 'sampleapp/recipe_add.html'
+    template_name = 'ledger/recipe_add.html'
 
     form_class = RecipeForm
