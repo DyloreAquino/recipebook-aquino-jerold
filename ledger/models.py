@@ -32,6 +32,18 @@ class Recipe(models.Model):
         """Return the URL associated with the Recipe."""
         return reverse('ledger:recipe_detail', args=[str(self.pk)])
 
+class RecipeImage(models.Model):
+    """A model for the image of a recipe."""
+
+    image = models.ImageField(null=True, blank=False, upload_to='images/')
+    description = models.TextField(max_length=255)
+    recipe = models.ForeignKey(
+        Recipe, 
+        on_delete=models.SET_NULL, 
+        null=True,
+        related_name='recipe_image'
+    )
+
 
 class RecipeIngredient(models.Model):
     """An associative entity between recipes and ingredients."""
