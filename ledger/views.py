@@ -2,8 +2,8 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Recipe
-from .forms import RecipeForm
+from .models import Recipe, RecipeImage
+from .forms import RecipeForm, RecipeImageForm
 
 
 class RecipeListView(ListView):
@@ -28,4 +28,12 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
     template_name = 'ledger/recipe_add.html'
 
     form_class = RecipeForm
-    
+
+
+class RecipeImageCreateView(LoginRequiredMixin, CreateView):
+    """A CreateView for adding Images to Recipes"""
+
+    model = RecipeImage
+    template_name = 'ledger/recipe_add_image.html'
+
+    form_class = RecipeImageForm
