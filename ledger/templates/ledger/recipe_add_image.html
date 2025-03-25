@@ -10,4 +10,10 @@
             Submit
         </button>
     </form>
+    
+    <p>
+        <a href="{% url 'ledger:recipe_detail' pk=recipe.pk %}">
+            Back to {{ recipe.name }}!
+        </a>
+    </p>
 {% endblock %}
